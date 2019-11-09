@@ -1,2 +1,26 @@
 syntax="proto3";
 
+package Cal;
+option go_package = "calpb";
+
+message SumRequest {
+    int32 Number1 = 1;
+    int32 Number2 =2;
+}
+
+
+message SumResponse {
+
+int32 result=1;
+
+}
+
+//grpc unary api to server
+
+service CalService{
+    //my sum unary api def 
+    rpc Sum(SumRequest) returns (SumResponse) {};
+}
+
+
+
